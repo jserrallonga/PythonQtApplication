@@ -1,0 +1,13 @@
+# Open Windows PowerShell as an Administrator
+
+# Allow Script Execution
+Set-ExecutionPolicy RemoteSigned
+
+# Create env Python Environment
+python -m venv env
+
+# Activates the env Environment
+./env/Scripts/activate
+
+# Install PyQt5
+pip install PyQt5
