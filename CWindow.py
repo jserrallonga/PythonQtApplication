@@ -38,26 +38,25 @@ class CWindow(QWidget):
             painter.drawLine(QPointF(50, 50 + y * 100), QPointF(450, 50 + y * 100))
 
     def initUI(self):
-        button = QPushButton("Click Me", self)
-        button.setGeometry(100, 100, 100, 30)
+        button = QPushButton("", self)
+        button.setGeometry(100, 100, 30, 30)
 
          # Customize the button's appearance using stylesheets
         button.setStyleSheet("""
-            QPushButton {
-                background-color: blue;
-                color: white;
-                border-style: none;
-                border-radius: 5px;
-                padding: 5px;
-            }
-            
-            QPushButton:hover {
-                background-color: lightblue;
-            }
-            
-            QPushButton:pressed {
-                background-color: green;
-            }
+        QPushButton {
+            background-color: #2244cc;
+            color: white;
+            border: none;
+            border-radius: 15px;
+        }
+		            
+        QPushButton:hover {
+            background-color: #4466cc;
+        }
+
+        QPushButton:pressed {
+            background-color: #1133aa;
+        }
         """)
 
         button.clicked.connect(self.buttonClicked)
