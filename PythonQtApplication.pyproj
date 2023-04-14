@@ -25,6 +25,15 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="CBoard.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CButton.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CEntity.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="CWindow.py" />
     <Compile Include="main.py" />
   </ItemGroup>

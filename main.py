@@ -1,15 +1,18 @@
+from CWindow import *
+from CBoard import *
+from CButton import *
+
 from PyQt5.QtWidgets import QApplication
-from CWindow import CWindow
 import sys
 
+
 if __name__ == '__main__':
-    # Create the application instance
     app = QApplication(sys.argv)
 
-    # Create the window instance
-    window = CWindow()
+    window = CWindow("MyWindow", 200, 200, 500, 500)
+    window.AddEntity(CBoard())
+    window.AddEntity(CButton(window))
 
-    # Show the window
     window.show()
 
     # Run the event loop

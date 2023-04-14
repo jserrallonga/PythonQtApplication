@@ -1,65 +1,21 @@
-from PyQt5.QtWidgets import QWidget, QApplication, QMainWindow, QPushButton
-from PyQt5.QtGui import QPainter, QBrush, QColor, QPen
-from PyQt5.QtCore import Qt, QPointF
+from PyQt5.QtWidgets import QWidget
+from PyQt5.QtGui import QPainter
 
 class CWindow(QWidget):
-    def __init__(self):
+    def __init__(self, title, x, y, width, height):
         super().__init__()
 
-        # Set the window properties
-        self.setWindowTitle('My Window')
-        self.width = 500
-        self.height = 500
+        self.setWindowTitle(title)
+        self.setGeometry(x, y, width, height)
+        self.entities = []
 
-        self.setGeometry(200, 200, self.width, self.height)
-
-        self.initUI()
+    def AddEntity(self, entity):
+        self.entities.append(entity)
 
     def paintEvent(self, event):
-        # Create a painter object
         painter = QPainter(self)
 
-        # Set the rendering environment
-        painter.setRenderHint(QPainter.Antialiasing, True)
-        painter.setBrush(QBrush(QColor(255, 0, 0)))
+        for entity in self.entities:
+            entity.Render(painter)
 
-        # Draw a rectangle
-        painter.drawRect(50, 50, 400, 400)
-
-        pen = QPen()
-        pen.setWidth(3);
-
-        painter.setPen(pen);
-        
-        for x in range(0, 5):
-            painter.drawLine(QPointF(50 + x * 100, 50), QPointF(50 + x * 100, 450))
-
-        for y in range(0, 5):
-            painter.drawLine(QPointF(50, 50 + y * 100), QPointF(450, 50 + y * 100))
-
-    def initUI(self):
-        button = QPushButton("", self)
-        button.setGeometry(100, 100, 30, 30)
-
-         # Customize the button's appearance using stylesheets
-        button.setStyleSheet("""
-        QPushButton {
-            background-color: #2244cc;
-            color: white;
-            border: none;
-            border-radius: 15px;
-        }
-		            
-        QPushButton:hover {
-            background-color: #4466cc;
-        }
-
-        QPushButton:pressed {
-            background-color: #1133aa;
-        }
-        """)
-
-        button.clicked.connect(self.buttonClicked)
-
-    def buttonClicked(self):
-        print("Button Clicked")
+        print("Finish paintEvent\n");
