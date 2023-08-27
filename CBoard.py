@@ -8,8 +8,8 @@ class CBoard(CEntity):
         self.rows = rows
         self.margin = 50
 
-        self.cellWidth = 50
-        self.cellHeight = 50
+        self.cellWidth = 100
+        self.cellHeight = 100
         self.cellColor = QColor(200, 200, 200)
 
     def RenderCells(self, painter):
@@ -25,11 +25,11 @@ class CBoard(CEntity):
         painter.setPen(pen)
 
         y = self.rows * self.cellHeight + self.margin
-        for x in range (self.margin, (self.cols + 1) * self.cellWidth + self.margin, self.cellWidth * 3):
+        for x in range (self.margin, (self.cols + 1) * self.cellWidth + self.margin, self.cellWidth * 2):
             painter.drawLine(QPointF(x, self.margin), QPointF(x, y))
 
         x = self.cols * self.cellWidth + self.margin
-        for y in range (self.margin, (self.rows + 1) * self.cellHeight + self.margin, self.cellHeight * 3):
+        for y in range (self.margin, (self.rows + 1) * self.cellHeight + self.margin, self.cellHeight * 2):
             painter.drawLine(QPointF(self.margin, y), QPointF(x, y))
 
     def Render(self, painter):

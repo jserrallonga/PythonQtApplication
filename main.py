@@ -8,8 +8,8 @@ import sys
 if __name__ == '__main__':
     app = QApplication(sys.argv)
 
-    window = CWindow("Soduku", 500, 50, 550, 550)
-    window.AddEntity(CBoard(9, 9))
+    window = CWindow("Soduku", 840, 50, 500, 500)
+    window.AddEntity(CBoard(4, 4))
     #window.AddEntity(CButton(window))
 
     window.show()
