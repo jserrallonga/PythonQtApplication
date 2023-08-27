@@ -31,9 +31,11 @@
     <Compile Include="CButton.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="CCell.py" />
     <Compile Include="CEntity.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="CScene.py" />
     <Compile Include="CWindow.py" />
     <Compile Include="main.py" />
   </ItemGroup>

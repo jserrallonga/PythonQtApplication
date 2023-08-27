@@ -1,3 +1,3 @@
 class CEntity():
-    def Render(self, painter):
+    def render(self, painter):
         print("Generic Render call")
