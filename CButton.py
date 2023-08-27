@@ -1,5 +1,4 @@
 from CEntity import *
-
 from PyQt5.QtWidgets import QPushButton
 
 class CButton(CEntity):
@@ -7,7 +6,8 @@ class CButton(CEntity):
         self.button = QPushButton("", window)
         self.button.setGeometry(100, 100, 30, 30)
 
-        self.button.setStyleSheet("""
+        self.button.setStyleSheet(
+        """
         QPushButton {
             background-color: #2244cc;
             color: white;
@@ -22,7 +22,8 @@ class CButton(CEntity):
         QPushButton:pressed {
             background-color: #1133aa;
         }
-        """)
+        """
+        )
 
         self.button.clicked.connect(self.buttonClicked)
 
